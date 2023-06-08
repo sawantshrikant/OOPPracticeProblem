@@ -10,7 +10,7 @@ namespace OOPPracticeProblem
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("1. Count Duplicate Elements\n2. Print Unique Elements\n3. Count Frequency of Elements\n4. Find Maximum and Minimum Elements\n5. Exit\nEnter Your Option To Execute: ");
+                Console.WriteLine("1. Count Duplicate Elements\n2. Print Unique Elements\n3. Count Frequency of Elements\n4. Find Maximum and Minimum Elements\n5. Print Pattern\n6. Exit\nEnter Your Option To Execute: ");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -65,6 +65,13 @@ namespace OOPPracticeProblem
                         Console.WriteLine($"Minimum element in the array: {min}");
                         break;
                     case 5:
+                        Console.WriteLine("Enter the number of rows:");
+                        int numRows = Convert.ToInt32(Console.ReadLine());
+
+                        PatternPrinter patternPrinter = new PatternPrinter();
+                        patternPrinter.PrintPattern(numRows);
+                        break;
+                    case 6:
                         flag = false;
                         break;
                     default:
