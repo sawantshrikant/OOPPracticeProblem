@@ -10,7 +10,7 @@ namespace OOPPracticeProblem
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("1. Count Duplicate Elements\n2. Print Unique Elements\n3. Exit\nEnter Your Option To Execute: ");
+                Console.WriteLine("1. Count Duplicate Elements\n2. Print Unique Elements\n3. Count Frequency of Elements\n4. Exit\nEnter Your Option To Execute: ");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -39,6 +39,20 @@ namespace OOPPracticeProblem
                         }
                         break;
                     case 3:
+                        Console.WriteLine("Enter the elements of the array (comma-separated):");
+                        string input3 = Console.ReadLine();
+                        int[] arr3 = Array.ConvertAll(input3.Split(','), int.Parse);
+
+                        FrequencyOfElements frequencyOfElements = new FrequencyOfElements();
+                        Dictionary<int, int> frequencyDict = frequencyOfElements.GetElementFrequencies(arr3);
+
+                        Console.WriteLine("Element frequencies:");
+                        foreach (KeyValuePair<int, int> kvp in frequencyDict)
+                        {
+                            Console.WriteLine($"Element: {kvp.Key}, Frequency: {kvp.Value}");
+                        }
+                        break;
+                    case 4:
                         flag = false;
                         break;
                     default:
