@@ -10,7 +10,7 @@ namespace OOPPracticeProblem
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("1. Count Duplicate Elements\n2. Print Unique Elements\n3. Count Frequency of Elements\n4. Exit\nEnter Your Option To Execute: ");
+                Console.WriteLine("1. Count Duplicate Elements\n2. Print Unique Elements\n3. Count Frequency of Elements\n4. Find Maximum and Minimum Elements\n5. Exit\nEnter Your Option To Execute: ");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -53,6 +53,18 @@ namespace OOPPracticeProblem
                         }
                         break;
                     case 4:
+                        Console.WriteLine("Enter the elements of the array (comma-separated):");
+                        string input4 = Console.ReadLine();
+                        int[] arr4 = Array.ConvertAll(input4.Split(','), int.Parse);
+
+                        MaxAndMinElement maxAndMinElement = new MaxAndMinElement();
+                        int max = maxAndMinElement.FindMaximum(arr4);
+                        int min = maxAndMinElement.FindMinimum(arr4);
+
+                        Console.WriteLine($"Maximum element in the array: {max}");
+                        Console.WriteLine($"Minimum element in the array: {min}");
+                        break;
+                    case 5:
                         flag = false;
                         break;
                     default:
