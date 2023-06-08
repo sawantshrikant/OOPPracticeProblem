@@ -10,7 +10,7 @@ namespace OOPPracticeProblem
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("1. Count Duplicate Elements\n2. Print Unique Elements\n3. Count Frequency of Elements\n4. Find Maximum and Minimum Elements\n5. Print Pattern\n6. Exit\nEnter Your Option To Execute: ");
+                Console.WriteLine("1. Count Duplicate Elements\n2. Print Unique Elements\n3. Count Frequency of Elements\n4. Find Maximum and Minimum Elements\n5. Print Pattern\n6. Reverse Each Word in a String\n7. Exit\nEnter Your Option To Execute: ");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -72,6 +72,15 @@ namespace OOPPracticeProblem
                         patternPrinter.PrintPattern(numRows);
                         break;
                     case 6:
+                        Console.WriteLine("Enter a string:");
+                        string input6 = Console.ReadLine();
+
+                        WordString wordString = new WordString();
+                        string reversedString = wordString.ReverseWords(input6);
+
+                        Console.WriteLine($"Reversed String: {reversedString}");
+                        break;
+                    case 7:
                         flag = false;
                         break;
                     default:
@@ -80,5 +89,6 @@ namespace OOPPracticeProblem
                 }
             }
         }
+
     }
 }
